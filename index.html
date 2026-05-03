@@ -16,14 +16,13 @@
     <link rel="apple-touch-icon" sizes="120x120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
     <link rel="apple-touch-icon" sizes="76x76" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
     
-    <!-- Icono para Safari (pestañas y marcadores) -->
+    <!-- Icono para Safari -->
     <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
     
-    <!-- Color de tema para la barra de estado -->
     <meta name="theme-color" content="#0f172a">
-    <meta name="description" content="Control de Cursos de Kite - Gestión de Comisiones">
+    <meta name="description" content="Kite Control de cursos y comisiones">
     
-    <title>Kite Control</title>
+    <title>Kite Control de cursos y comisiones</title>
     <style>
         * {
             margin: 0;
@@ -51,7 +50,6 @@
             position: relative;
             min-height: 100vh;
             min-height: -webkit-fill-available;
-            /* Prevenir scroll no deseado en iOS */
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
         }
@@ -700,14 +698,11 @@
                                 event.respondWith(
                                     caches.match(event.request)
                                         .then((response) => {
-                                            // Devuelve cache si existe, sino hace fetch
                                             return response || fetch(event.request).then((response) => {
-                                                // No cachear respuestas que no sean OK
                                                 if (!response || response.status !== 200 || response.type !== 'basic') {
                                                     return response;
                                                 }
                                                 
-                                                // Clonar respuesta para guardar en cache
                                                 const responseToCache = response.clone();
                                                 caches.open(CACHE_NAME)
                                                     .then((cache) => {
@@ -718,7 +713,6 @@
                                             });
                                         })
                                         .catch(() => {
-                                            // Si falla la red y es una página, devolver offline page
                                             if (event.request.mode === 'navigate') {
                                                 return caches.match('./');
                                             }
@@ -758,7 +752,7 @@
         </select>
     </div>
 
-    <h1>Kite Control</h1>
+    <h1>Kite Control de cursos y comisiones</h1>
 
     <div class="tabs">
         <div class="tab ac" data-tab="reg">📋 Registrar</div>
@@ -884,11 +878,9 @@
             const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
             
             if (isIOS && !isStandalone && isSafari) {
-                // Mostrar instrucciones para iOS
                 document.getElementById('ios-install-info').style.display = 'block';
             }
             
-            // Para Android/Chrome, mostrar banner de instalación
             if (!isIOS && !isStandalone) {
                 window.addEventListener('beforeinstallprompt', (e) => {
                     e.preventDefault();
@@ -918,7 +910,6 @@
                     deferredPrompt = null;
                 });
             } else {
-                // Fallback para iOS
                 alert('📱 Para instalar en iPhone/iPad:\n\n1. Pulsa el botón Compartir (↑)\n2. Desplázate y pulsa "Añadir a pantalla de inicio"\n3. Pulsa "Añadir"');
             }
         }
@@ -1568,7 +1559,7 @@
         }
         
         function actualizarTextos() {
-            document.querySelector('h1').innerHTML = 'Kite Control';
+            document.querySelector('h1').innerHTML = 'Kite Control de cursos y comisiones';
             
             const tabs = document.querySelectorAll('.tab');
             if (tabs[0]) tabs[0].innerHTML = idiomaActual === 'es' ? "📋 Registrar" : "📋 Register";
@@ -1771,27 +1762,16 @@
                 return;
             }
             
-            const btnPDF = event.target;
-            const textoOriginal = btnPDF.innerHTML;
-            btnPDF.innerHTML = "⏳ Generando PDF...";
-            btnPDF.disabled = true;
+            const contenidoPDF = generarHTMLParaPDF(desde, hasta, datos);
+            const ventanaPDF = window.open('', '_blank');
+            ventanaPDF.document.write(contenidoPDF);
+            ventanaPDF.document.close();
             
-            try {
-                const contenidoPDF = generarHTMLParaPDF(desde, hasta, datos);
-                const ventanaPDF = window.open('', '_blank');
-                ventanaPDF.document.write(contenidoPDF);
-                ventanaPDF.document.close();
-                ventanaPDF.onload = function() {
-                    ventanaPDF.print();
-                    setTimeout(() => ventanaPDF.close(), 1000);
-                };
-                toast("📄 PDF generado correctamente");
-            } catch (error) {
-                toast("❌ Error al generar PDF", 1);
-            } finally {
-                btnPDF.innerHTML = textoOriginal;
-                btnPDF.disabled = false;
-            }
+            setTimeout(() => {
+                ventanaPDF.print();
+            }, 500);
+            
+            toast("📄 PDF generado. Usa Compartir para guardar");
         }
         
         function generarHTMLParaPDF(desde, hasta, datos) {
@@ -1933,9 +1913,7 @@
         document.getElementById('btn-ta-off').addEventListener('click', () => tg('ta'));
         document.getElementById('btn-ta-on').addEventListener('click', () => tg('ta'));
         
-        // Detectar dispositivo para instalación
         detectarDispositivo();
-        
         cargarIdiomaGuardado();
         cambioFecha();
         actualizarMostradorFactor();
