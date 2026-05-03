@@ -2,19 +2,28 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover, maximum-scale=1.0">
+    
+    <!-- Meta tags específicos para iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Kite Control">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0f172a">
+    
+    <!-- Iconos para iOS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="152x152" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="120x120" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" sizes="76x76" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
+    
+    <!-- Icono para Safari (pestañas y marcadores) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAQrSURBVHic7d1NctNAEEbhJ1HZcAQ2sOEI2WQFR+AIsOIInm8zQyw8YztjjUYz3f2+KlXZZJz8Yz3dM5oUgAAAAAAAAAAAAAAAAAAAAAAAAAAA8D+szQ7G/nPdBtZdR6vF1N8t7M19p7sF9JzB1h9qA+kE2Gp5aEdr/x87NbQNJddlPm2NnSsAAAAASUVORK5CYII=">
+    
+    <!-- Color de tema para la barra de estado -->
     <meta name="theme-color" content="#0f172a">
     <meta name="description" content="Control de Cursos de Kite - Gestión de Comisiones">
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIktpdGUgQ29udHJvbCIsCiAgInNob3J0X25hbWUiOiAiS2l0ZSIsCiAgInN0YXJ0X3VybCI6ICIuLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiIzBmMTcyYSIsCiAgInRoZW1lX2NvbG9yIjogIiMwZjE3MmEiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIyWlhKemFXOXVQU0V4TGpBZ1B6NEtQSE4wZVd4bFBrRmtiMkpsSUdOaGJtTmhjbVZ6UFNKelRrRTZRMGRKUkVWQlRVVk5OVk02UlVaQk9FTTlQZzBLUEM5emRIbHNaVDROQ2c9PSIsCiAgICAgICJzaXplcyI6ICIxOTJ4MTkyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0KfQ==">
-    
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🪁</text></svg>">
-    
-    <title>Control de Cursos de Kite - Gestión de Comisiones</title>
+    <title>Kite Control</title>
     <style>
         * {
             margin: 0;
@@ -34,8 +43,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background: #0f172a;
             color: #e2e8f0;
-            padding: env(safe-area-inset-top, 12px) env(safe-area-inset-right, 12px) env(safe-area-inset-bottom, 12px) env(safe-area-inset-left, 12px);
-            padding-bottom: max(env(safe-area-inset-bottom, 12px), 30px);
+            padding: env(safe-area-inset-top, 16px) env(safe-area-inset-right, 16px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 16px);
             max-width: 500px;
             margin: 0 auto;
             font-size: 16px;
@@ -43,34 +51,79 @@
             position: relative;
             min-height: 100vh;
             min-height: -webkit-fill-available;
+            /* Prevenir scroll no deseado en iOS */
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
         }
         
         h1 {
             text-align: center;
             margin: 8px 0 16px 0;
-            font-size: 1.1em;
-            font-weight: 600;
+            font-size: 1.2em;
+            font-weight: 700;
             color: #f1f5f9;
-            padding: 0 45px;
+            padding: 0 10px;
         }
         
         .install-banner {
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
             color: white;
-            padding: 12px 16px;
-            border-radius: 14px;
-            margin-bottom: 12px;
+            padding: 14px 20px;
+            border-radius: 16px;
+            margin-bottom: 16px;
             text-align: center;
-            font-size: 0.85em;
+            font-size: 0.9em;
             cursor: pointer;
             display: none;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(59, 130, 246, 0.6); }
         }
         
         .install-banner .icon {
             font-size: 1.5em;
+        }
+        
+        .ios-install-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 14px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #93c5fd;
+            display: none;
+        }
+        
+        .ios-install-info .share-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #3b82f6;
+            border-radius: 5px;
+            position: relative;
+            vertical-align: middle;
+            margin: 0 4px;
+        }
+        
+        .ios-install-info .share-icon::after {
+            content: '↑';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
         }
         
         .card {
@@ -254,15 +307,6 @@
             font-size: 0.75em;
             font-style: italic;
             padding: 10px 0;
-        }
-        
-        .alumno-fila.desactivado {
-            opacity: 0.4;
-            pointer-events: none;
-        }
-        
-        .alumno-fila.desactivado select {
-            pointer-events: auto;
         }
         
         .res {
@@ -620,37 +664,87 @@
                 navigator.serviceWorker.register(
                     URL.createObjectURL(
                         new Blob([`
-                            self.addEventListener('install', (e) => {
+                            const CACHE_NAME = 'kite-control-v2';
+                            const urlsToCache = [
+                                './',
+                                './index.html'
+                            ];
+                            
+                            self.addEventListener('install', (event) => {
                                 self.skipWaiting();
+                                event.waitUntil(
+                                    caches.open(CACHE_NAME)
+                                        .then((cache) => {
+                                            return cache.addAll(urlsToCache);
+                                        })
+                                );
                             });
                             
-                            self.addEventListener('activate', (e) => {
-                                e.waitUntil(clients.claim());
+                            self.addEventListener('activate', (event) => {
+                                event.waitUntil(
+                                    caches.keys().then((cacheNames) => {
+                                        return Promise.all(
+                                            cacheNames.map((cacheName) => {
+                                                if (cacheName !== CACHE_NAME) {
+                                                    return caches.delete(cacheName);
+                                                }
+                                            })
+                                        );
+                                    }).then(() => {
+                                        return clients.claim();
+                                    })
+                                );
                             });
                             
-                            self.addEventListener('fetch', (e) => {
-                                e.respondWith(
-                                    caches.match(e.request).then((response) => {
-                                        return response || fetch(e.request).then((response) => {
-                                            return caches.open('kite-v1').then((cache) => {
-                                                cache.put(e.request, response.clone());
+                            self.addEventListener('fetch', (event) => {
+                                event.respondWith(
+                                    caches.match(event.request)
+                                        .then((response) => {
+                                            // Devuelve cache si existe, sino hace fetch
+                                            return response || fetch(event.request).then((response) => {
+                                                // No cachear respuestas que no sean OK
+                                                if (!response || response.status !== 200 || response.type !== 'basic') {
+                                                    return response;
+                                                }
+                                                
+                                                // Clonar respuesta para guardar en cache
+                                                const responseToCache = response.clone();
+                                                caches.open(CACHE_NAME)
+                                                    .then((cache) => {
+                                                        cache.put(event.request, responseToCache);
+                                                    });
+                                                
                                                 return response;
                                             });
-                                        });
-                                    })
+                                        })
+                                        .catch(() => {
+                                            // Si falla la red y es una página, devolver offline page
+                                            if (event.request.mode === 'navigate') {
+                                                return caches.match('./');
+                                            }
+                                            return new Response('Sin conexión', { status: 503 });
+                                        })
                                 );
                             });
                         `], { type: 'application/javascript' })
                     ),
-                    { scope: '/' }
-                );
+                    { scope: './' }
+                ).then((registration) => {
+                    console.log('✅ Service Worker registrado:', registration.scope);
+                }).catch((error) => {
+                    console.log('❌ Error Service Worker:', error);
+                });
             });
         }
     </script>
 
+    <div class="ios-install-info" id="ios-install-info">
+        📱 Para instalar: pulsa <span class="share-icon"></span> y luego "Añadir a pantalla de inicio"
+    </div>
+
     <div id="install-banner" class="install-banner no-print" onclick="instalarApp()">
         <span class="icon">📱</span>
-        <span>Instalar como App</span>
+        <span>Instalar App</span>
     </div>
 
     <div id="aviso-captura" class="aviso-captura oc">
@@ -664,7 +758,7 @@
         </select>
     </div>
 
-    <h1>Control de Cursos de Kite y cálculo de comisiones</h1>
+    <h1>Kite Control</h1>
 
     <div class="tabs">
         <div class="tab ac" data-tab="reg">📋 Registrar</div>
@@ -783,6 +877,27 @@
     <div id="tst" class="oc"></div>
 
     <script>
+        // ========== DETECCIÓN DE IOS Y GUÍA DE INSTALACIÓN ==========
+        function detectarDispositivo() {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            const isStandalone = window.navigator.standalone;
+            const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+            
+            if (isIOS && !isStandalone && isSafari) {
+                // Mostrar instrucciones para iOS
+                document.getElementById('ios-install-info').style.display = 'block';
+            }
+            
+            // Para Android/Chrome, mostrar banner de instalación
+            if (!isIOS && !isStandalone) {
+                window.addEventListener('beforeinstallprompt', (e) => {
+                    e.preventDefault();
+                    deferredPrompt = e;
+                    document.getElementById('install-banner').style.display = 'flex';
+                });
+            }
+        }
+        
         // ========== PWA Installation ==========
         let deferredPrompt;
         
@@ -798,19 +913,25 @@
                 deferredPrompt.userChoice.then((choiceResult) => {
                     if (choiceResult.outcome === 'accepted') {
                         document.getElementById('install-banner').style.display = 'none';
+                        document.getElementById('ios-install-info').style.display = 'none';
                     }
                     deferredPrompt = null;
                 });
+            } else {
+                // Fallback para iOS
+                alert('📱 Para instalar en iPhone/iPad:\n\n1. Pulsa el botón Compartir (↑)\n2. Desplázate y pulsa "Añadir a pantalla de inicio"\n3. Pulsa "Añadir"');
             }
         }
         
         window.addEventListener('appinstalled', () => {
             document.getElementById('install-banner').style.display = 'none';
+            document.getElementById('ios-install-info').style.display = 'none';
             deferredPrompt = null;
+            toast('✅ App instalada correctamente');
         });
 
         // ========== CONFIGURACIÓN ==========
-        const TH = 2; // Tarifa por hora para TODOS los niveles
+        const TH = 2;
         let FACTOR_NETO = 0.8175;
         
         function getFactorNeto() {
@@ -952,19 +1073,16 @@
         }
         
         function resetFormularioDia() {
-            // Resetear niveles a valores por defecto (no N)
             document.getElementById('nivel-ma-1').value = 'A1';
             document.getElementById('nivel-ma-2').value = 'A2';
             document.getElementById('nivel-ta-1').value = 'F1';
             document.getElementById('nivel-ta-2').value = 'F2';
             
-            // Resetear horas
             document.getElementById('h-ma-1').value = '3';
             document.getElementById('h-ma-2').value = '3';
             document.getElementById('h-ta-1').value = '3';
             document.getElementById('h-ta-2').value = '3';
             
-            // Mostrar inputs de horas normalmente
             ['ma-1', 'ma-2', 'ta-1', 'ta-2'].forEach(id => {
                 document.getElementById('datos-' + id).innerHTML = '<input type="number" value="3" step="0.5" min="0.5" max="8" id="h-' + id + '">h';
                 document.getElementById('h-' + id).value = '3';
@@ -1158,10 +1276,8 @@
             const d = document.getElementById('datos-' + t + '-' + n);
             
             if (s.value === 'N') {
-                // Sin alumno: mostrar 0h fijo
                 d.innerHTML = '<span class="sin-alumno">0h</span>';
             } else {
-                // Cualquier otro nivel: mostrar input de horas
                 d.innerHTML = '<input type="number" value="3" step="0.5" min="0.5" max="8" id="h-' + t + '-' + n + '">h';
             }
         }
@@ -1180,11 +1296,10 @@
                 const niv = document.getElementById('nivel-' + t + '-' + n).value;
                 
                 if (niv === 'N') {
-                    // Sin alumno: 0 horas, 0 bruto, 0 comisión
                     a.push({ nivel: 'N', horas: 0, bruto: 0, comision: 0 });
                 } else {
                     const h = parseFloat(document.getElementById('h-' + t + '-' + n)?.value || 3);
-                    const bruto = h * TH;  // TH = 2€/hora para TODOS los niveles
+                    const bruto = h * TH;
                     a.push({ nivel: niv, horas: h, bruto: bruto, comision: aplicarNeto(bruto) });
                 }
             });
@@ -1205,7 +1320,7 @@
                 if (!als.length) return;
                 const g = {};
                 als.forEach(a => {
-                    if (a.nivel === 'N') return; // No guardar alumnos sin nivel
+                    if (a.nivel === 'N') return;
                     
                     const k = a.nivel, tipo = (k === 'KP' || k === 'P') ? k.toLowerCase() : 'normal';
                     if (!g[k]) g[k] = { nivel: k, tipo, alumnos: 0, bruto: 0, comision: 0 };
@@ -1453,7 +1568,7 @@
         }
         
         function actualizarTextos() {
-            document.querySelector('h1').innerHTML = idiomaActual === 'es' ? 'Control de Cursos de Kite y cálculo de comisiones' : 'Kite Course Control & Commission Calculator';
+            document.querySelector('h1').innerHTML = 'Kite Control';
             
             const tabs = document.querySelectorAll('.tab');
             if (tabs[0]) tabs[0].innerHTML = idiomaActual === 'es' ? "📋 Registrar" : "📋 Register";
@@ -1645,7 +1760,7 @@
             toast(`📊 ${datos.length} registros en total`);
         }
         
-        // ========== EXPORTAR PDF MEJORADO ==========
+        // ========== EXPORTAR PDF ==========
         async function exportarPDF() {
             const desde = document.getElementById('fecha-desde').value;
             const hasta = document.getElementById('fecha-hasta').value;
@@ -1735,7 +1850,7 @@
             <html>
             <head>
                 <meta charset="UTF-8">
-                <title>Resumen Comisiones Kite - ${desde} a ${hasta}</title>
+                <title>Kite Control - ${desde} a ${hasta}</title>
                 <style>
                     * { margin: 0; padding: 0; box-sizing: border-box; }
                     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: #ffffff; padding: 30px 25px; color: #1e293b; font-size: 12px; }
@@ -1763,7 +1878,7 @@
             </head>
             <body>
                 <div class="header">
-                    <h1>CONTROL DE CURSOS DE KITE</h1>
+                    <h1>KITE CONTROL</h1>
                     <p>${idiomaActual === 'es' ? 'Resumen de comisiones' : 'Commission Summary'}</p>
                     <p>${idiomaActual === 'es' ? 'Generado el' : 'Generated on'} ${fechaActual}</p>
                 </div>
@@ -1801,13 +1916,13 @@
                 </div>
                 
                 <div class="footer">
-                    Aplicación de Control de Cursos de Kite
+                    Kite Control App
                 </div>
             </body>
             </html>`;
         }
         
-        // Inicializar eventos de cambio de nivel
+        // Inicializar eventos
         ['ma-1', 'ma-2', 'ta-1', 'ta-2'].forEach(id => {
             const partes = id.split('-');
             document.getElementById('nivel-' + id).addEventListener('change', () => aj(partes[0], partes[1]));
@@ -1817,6 +1932,9 @@
         document.getElementById('btn-ma-on').addEventListener('click', () => tg('ma'));
         document.getElementById('btn-ta-off').addEventListener('click', () => tg('ta'));
         document.getElementById('btn-ta-on').addEventListener('click', () => tg('ta'));
+        
+        // Detectar dispositivo para instalación
+        detectarDispositivo();
         
         cargarIdiomaGuardado();
         cambioFecha();
