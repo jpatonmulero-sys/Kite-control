@@ -1767,9 +1767,15 @@
             
             setTimeout(() => {
                 ventanaPDF.print();
+                
+                // Volver a la app automáticamente después de imprimir/cerrar
+                setTimeout(() => {
+                    ventanaPDF.close();
+                    window.location.href = 'jpatonmulero-sys.github.io/Kite-control/';
+                }, 1000);
             }, 500);
             
-            toast("📄 PDF generado. Usa Compartir para guardar");
+            toast("📄 PDF generado. Volviendo a la app...");
         }
         
         function generarHTMLParaPDF(desde, hasta, datos) {
